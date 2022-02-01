@@ -13,3 +13,6 @@ Rails 7.0.1
 
 * Deployment instructions
 localhost 3000
+
+following this 
+https://guides.rubyonrails.org/getting_started.html#starting-up-the-web-server
