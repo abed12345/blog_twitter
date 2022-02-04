@@ -14,10 +14,19 @@ class ArticlesController < ApplicationController
   end
 
   def create
+    client = Twitter::REST::Client.new do |config|
+      config.consumer_key        = ENV['TWITTER_CONSUMER_KEY']
+      config.consumer_secret     = ENV['TWITTER_CONSUMER_SECRET']
+      config.access_token        = ENV['TWITTER_CONSUMER_KEY']
+      config.access_token_secret = ENV['TWITTER_CONSUMER_KEY_SECRET']
+    end
+
     @article = Article.new(article_params)
 
     if @article.save
       redirect_to @article
+      client.status(@article)
+      
     else
       render :new, status: :unprocessable_entity
     end
