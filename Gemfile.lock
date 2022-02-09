@@ -140,6 +140,7 @@ GEM
     minitest (5.15.0)
     msgpack (1.4.4)
     multipart-post (2.1.1)
+    murmurhash3 (0.1.6)
     naught (1.1.0)
     net-imap (0.2.3)
       digest
@@ -236,6 +237,8 @@ GEM
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.8)
+    unleash (4.0.0)
+      murmurhash3 (~> 0.1.6)
     web-console (4.2.0)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -271,6 +274,7 @@ DEPENDENCIES
   turbo-rails
   twitter
   tzinfo-data
+  unleash (~> 4.0.0)
   web-console
   webdrivers
 

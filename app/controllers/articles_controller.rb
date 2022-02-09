@@ -25,7 +25,7 @@ class ArticlesController < ApplicationController
 
     if @article.save
       redirect_to @article
-      client.update('hi world')
+      client.update(@article.title + " " + @article.body)
       
     else
       render :new, status: :unprocessable_entity
