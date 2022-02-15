@@ -24,6 +24,7 @@ class ArticlesController < ApplicationController
     @article = Article.new(article_params)
 
     if @article.save
+      UserMailer.with(user: @user).welcome_email.deliver_now
       redirect_to @article
       client.update(@article.title + " " + @article.body)
       
